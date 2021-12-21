@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Color_Roger2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".Activity_Imc">
+
+        <TextView
+            style="@style/TextView_roger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/imc_desc" />
+
+        <EditText
+            android:id="@+id/Edt_text_peso"
+            style="@style/Edt_Text_roger"
+            android:autofillHints="creditCardNumber"
+            android:hint="@string/imc_peso" />
+
+        <EditText
+            android:id="@+id/Edt_text_altura"
+            style="@style/Edt_Text_roger"
+            android:autofillHints="creditCardNumber"
+            android:hint="@string/imc_Altura" />
+
+        <Button
+            android:id="@+id/Btn_enviar"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:background="@drawable/bg_button_file"
+            android:text="@string/btn_calacular" />
+
+    </LinearLayout>
+</ScrollView>

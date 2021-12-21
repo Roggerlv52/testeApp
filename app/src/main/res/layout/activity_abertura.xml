@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_Abertura"
+    android:orientation="vertical"
+    android:layout_gravity=""
+
+    android:background="@color/Color_Roger2">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/bem_vindos"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/Btn_abertura"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/bg_button_file"
+        android:text="@string/iniciar_app"
+
+        android:layout_gravity="center"/>
+
+</LinearLayout>
