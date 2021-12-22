@@ -109,7 +109,7 @@ public class SqlHelper extends SQLiteOpenHelper {
         }
         return calcId;
     }
-
+//    Buscar Dados
     long updateItem(String type, double response, int id) {
         SQLiteDatabase db = getWritableDatabase();
         db.beginTransaction();

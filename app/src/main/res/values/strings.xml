@@ -29,7 +29,7 @@
     <string name="delete_message">Você realmente quer excluir o registro?</string>
     <string name="cancel">Cancelar</string>
     <string name="IMC_resposta">Imc: %1$.2f</string>
-    <string name="Lista_resposta">Resultado:%1$.2f,Data: %2$s</string>
+    <string name="Lista_resposta">Resultado:%1$.2f,\nData: %2$s</string>
     <string name="bem_vindos">Bem vindo ao Fitness Tracker</string>
     <string name="iniciar_app">Iniciar app</string>
     <string name="salvar">Salvar</string>

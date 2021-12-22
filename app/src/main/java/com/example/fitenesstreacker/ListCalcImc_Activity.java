@@ -61,8 +61,8 @@ public class ListCalcImc_Activity extends AppCompatActivity {
 
         @NonNull
         public ListeCalcViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-              return new ListeCalcViewHolder(getLayoutInflater().inflate(android.R.layout.simple_expandable_list_item_1, parent,false));
-           // return new ListeCalcViewHolder(getLayoutInflater().inflate(R.layout.item_lista_imc, parent, false));
+            //  return new ListeCalcViewHolder(getLayoutInflater().inflate(android.R.layout.simple_expandable_list_item_1, parent,false));
+            return new ListeCalcViewHolder(getLayoutInflater().inflate(R.layout.item_lista_imc, parent, false));
         }
 
         @Override
@@ -73,7 +73,7 @@ public class ListCalcImc_Activity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-                return datas.size();
+            return datas.size();
         }
 
         public void onLongClick(int position, String type, int id) {
@@ -119,41 +119,54 @@ public class ListCalcImc_Activity extends AppCompatActivity {
         }
     }
 
-        private class ListeCalcViewHolder extends RecyclerView.ViewHolder {
+    private class ListeCalcViewHolder extends RecyclerView.ViewHolder {
 
-            public ListeCalcViewHolder(@NonNull View itemView) {
-                super(itemView);
+        public ListeCalcViewHolder(@NonNull View itemView) {
+            super(itemView);
 
+        }
+
+        public void Bid(Registro data, final OnAdapterItemClickeListener onItemClickListener) {
+
+            String Agora = "";
+            try {
+                SimpleDateFormat dataFormatada = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", new Locale("pt", "BR"));
+                Date datasalva = dataFormatada.parse(data.createDate);
+                SimpleDateFormat minhadata = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", new Locale("pt", "BR"));
+                Agora = minhadata.format(datasalva);
+
+            } catch (ParseException e) {
             }
 
-            public void Bid(Registro data, final OnAdapterItemClickeListener onItemClickListener) {
+            TextView texto = itemView.findViewById(R.id.item_txt_IMC);
 
-                String Agora = "";
-                try {
-                    SimpleDateFormat dataFormatada = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", new Locale("pt", "BR"));
-                    Date datasalva = dataFormatada.parse(data.createDate);
-                    SimpleDateFormat minhadata = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", new Locale("pt", "BR"));
-                    Agora = minhadata.format(datasalva);
+            /**
+             *((TextView) itemView).setText(getString(R.string.Lista_resposta, data.response, Agora));
+             *
+             *listener para ouvir evento de click (ABRIR EDIÇAO)
+             *
+             *itemView.setOnClickListener(view -> onItemClickListener.onClick(data.id, data.type));
+             *
+             *listener para ouvir evento de long-click (segurar touch - EXCLUIR)
+             *onItemClickListener.onLongClick(getAdapterPosition(), data.type, data.id);
+             *itemView.setOnLongClickListener(view -> {
+             *onItemClickListener.onLongClick(getAdapterPosition(), data.type, data.id);
+             *return false;
+             *});
+             **/
 
-                } catch (ParseException e) {
-                }
-               // TextView texto = itemView.findViewById(R.id.item_txt_IMC);
-                ((TextView) itemView).setText(getString(R.string.Lista_resposta, data.response, Agora));
-              //  texto.setText(getString(R.string.Lista_resposta, data.response, Agora));
+            texto.setText(getString(R.string.Lista_resposta, data.response, Agora));
+            // listener para ouvir evento de click (ABRIR EDIÇAO)
+            texto.setOnClickListener(view -> onItemClickListener.onClick(data.id, data.type));
 
-                // listener para ouvir evento de click (ABRIR EDIÇAO)
-              //  texto.setOnClickListener(view -> onItemClickListener.onClick(data.id, data.type));
-                itemView.setOnClickListener(view -> onItemClickListener.onClick(data.id, data.type));
-                // listener para ouvir evento de long-click (segurar touch - EXCLUIR)
-               // texto.setOnLongClickListener(view -> {
-                   // onItemClickListener.onLongClick(getAdapterPosition(), data.type, data.id);
-                itemView.setOnLongClickListener(view -> {
-                    Log.d("TESTE",String.valueOf(data.id));
-                    onItemClickListener.onLongClick(getAdapterPosition(), data.type, data.id);
-                    return false;
-                });
+           // listener para ouvir evento de long-click (segurar touch - EXCLUIR)
+            texto.setOnLongClickListener(view -> {
+                Log.d("TESTE", String.valueOf(data.id));
+                onItemClickListener.onLongClick(getAdapterPosition(), data.type, data.id);
+                return false;
+            });
 
-            }
         }
     }
+}
 
