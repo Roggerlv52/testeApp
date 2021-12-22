@@ -31,7 +31,7 @@ public class ListCalcImc_Activity extends AppCompatActivity {
 
         Bundle extra = getIntent().getExtras();
 
-        RecyclerView recyclerView = findViewById(R.id.RecycleView_list_IT);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view_list);
 
         if (extra != null) {
             String type = extra.getString("type");

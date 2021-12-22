@@ -38,9 +38,9 @@ public class SqlHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(@NonNull SQLiteDatabase db) {
         db.execSQL(
-                "CREATE TABLE calc (id INTEDER primary key, type_calc TEXT, res DECIMAL, created_date DATETIME)"
+                "CREATE TABLE calc (id INTEGER primary key, type_calc TEXT, res DECIMAL, created_date DATETIME)"
         );
-
+     // Corrigido erro de escrita  "CREATE TABLE calc (id INTEDER para INTEGER
     }
 
     @Override
